@@ -10,14 +10,13 @@ openModalBtn.addEventListener("click", () => {
   overlay.classList.add("open");
 });
 
-//adding an click eventListener to the close button to remove open class
-closeModalBtn.addEventListener("click", () => {
+const closeModal = () => {
   modal.classList.remove("open");
   overlay.classList.remove("open");
-});
+};
+
+//adding an click eventListener to the close button to remove open class
+closeModalBtn.addEventListener("click", closeModal);
 
 //adding an click eventListener to the overlay to remove open class
-overlay.addEventListener("click", () => {
-  modal.classList.remove("open");
-  overlay.classList.remove("open");
-});
+overlay.addEventListener("click", closeModal);
